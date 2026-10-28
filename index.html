@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Steve Sheppard | False Connections</title>
+<meta name="description" content="False Connections by Steve Sheppard: she's ex-MI5, MI5 wants her dead. Plus the Dawson and Lucy spy thrillers with laughs, and Lazytown.">
+<meta property="og:title" content="A homepage for Steve Sheppard, made by Sparsh Saini">
+<meta property="og:description" content="A homepage idea for Steve Sheppard and False Connections, made by Sparsh Saini. Not his official site.">
+<meta property="og:image" content="https://sparshsainied-prog.github.io/stevesheppard/img/og.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2306233d'/><path d='M9 6h14v4h-9v5h8v4h-8v7H9z' fill='%23f1e432'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/back.jpg">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/* Everything is lifted from the False Connections wraparound cover: the cold Welsh blues of the waterfall
+   and the wet road, the moss, the yellow of Mel's jacket and the title, the tall condensed capitals
+   (Oswald) and the plain sans of the back-cover blurb (Source Sans 3). */
+:root {
+  --night: #04192c;
+  --deep: #06233d;
+  --blue: #0b5d92;
+  --cyan: #2fa6d8;
+  --moss: #2d6b3c;
+  --yellow: #f1e432;
+  --mist: #dbeaf3;
+  --soft: #93b2c6;
+  --cond: "Oswald", "Arial Narrow", sans-serif;
+  --text: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+  --gutter: clamp(1rem, 5vw, 4rem);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--night); color: var(--mist); font-family: var(--text); font-size: 1.15rem; line-height: 1.55; overflow-x: hidden; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+.strip { background: var(--yellow); color: var(--night); text-align: center; font-size: .95rem; font-weight: 600; padding: .45rem var(--gutter); position: relative; z-index: 30; }
+
+/* ---------- nav: his name tab, in the cover's yellow capitals ---------- */
+.tab { position: fixed; z-index: 40; bottom: 14px; right: 12px; border: 0; cursor: pointer; background: var(--yellow); color: var(--night); font-family: var(--cond); font-weight: 700; font-size: 1.05rem; letter-spacing: .04em; text-transform: uppercase; padding: .55rem .8rem .5rem; box-shadow: 0 6px 18px rgba(0, 0, 0, .35); opacity: 0; pointer-events: none; transition: opacity .2s; }
+.tab.on { opacity: 1; pointer-events: auto; }
+.drop { position: fixed; z-index: 41; bottom: 14px; right: 12px; width: min(320px, calc(100vw - 28px)); background: var(--deep); border: 2px solid var(--yellow); display: none; padding: .6rem 1.2rem 1rem; }
+.drop.open { display: block; }
+.drop ol { list-style: none; padding: 0; margin: 0; }
+.drop a { display: block; font-family: var(--cond); font-weight: 500; font-size: 1.5rem; text-transform: uppercase; text-decoration: none; padding: .4rem 0; border-bottom: 1px solid rgba(219, 234, 243, .2); }
+.drop a:hover { color: var(--yellow); }
+.drop .x { display: block; margin-left: auto; background: none; border: 0; color: var(--yellow); font-family: var(--cond); font-weight: 700; font-size: 1rem; text-transform: uppercase; cursor: pointer; padding: .3rem 0; }
+
+/* ---------- hero: the book turned over in your hands ---------- */
+.hero { position: relative; height: 330vh; }
+.stage { --bw: min(calc(100vw - 2 * var(--gutter) - 24px), calc((100svh - 300px) * .617)); position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; background: radial-gradient(120% 70% at 50% 30%, #0b3354 0%, var(--night) 70%); }
+.book { position: absolute; left: 50%; top: 22px; width: var(--bw); aspect-ratio: 958 / 1552; transform: translateX(-50%); perspective: 1700px; }
+.card { position: absolute; inset: 0; transform-style: preserve-3d; will-change: transform; }
+.face { position: absolute; top: 0; height: 100%; backface-visibility: hidden; -webkit-backface-visibility: hidden; background: center / 100% 100% no-repeat; }
+.front { left: 0; width: 100%; background-image: url(img/front.jpg); transform: translateZ(calc(var(--bw) * .0752)); box-shadow: inset 2px 0 0 rgba(255, 255, 255, .12); }
+.back { left: 0; width: 100%; overflow: hidden; background-image: url(img/back.jpg); transform: rotateY(180deg) translateZ(calc(var(--bw) * .0752)); }
+.spine { left: 50%; width: calc(var(--bw) * .1503); margin-left: calc(var(--bw) * -.07515); background-image: url(img/spine.jpg); transform: rotateY(-90deg) translateZ(calc(var(--bw) * .5)); }
+.lights { position: absolute; display: block; max-width: none; will-change: transform, opacity; mix-blend-mode: normal; }
+.shadow { position: absolute; left: 6%; right: 6%; bottom: -16px; height: 22px; border-radius: 50%; background: rgba(0, 0, 0, .55); filter: blur(10px); }
+.words { position: absolute; left: var(--gutter); right: var(--gutter); top: calc(22px + var(--bw) * 1.62 + 22px); }
+.says { display: grid; }
+.says > * { grid-area: 1 / 1; will-change: opacity, transform; }
+.words h1 { margin: 0 0 .4rem; font-family: var(--cond); font-weight: 500; font-size: 1.05rem; letter-spacing: .06em; text-transform: uppercase; color: var(--soft); }
+.line { margin: 0 0 .9rem; font-size: clamp(1.15rem, 4.8vw, 1.4rem); line-height: 1.32; }
+.tag { margin: 0 0 .9rem; font-family: var(--cond); font-weight: 700; font-size: clamp(1.5rem, 6.4vw, 2rem); line-height: 1.08; text-transform: uppercase; color: #fff; }
+.tag span { color: var(--yellow); }
+.btns { display: flex; flex-wrap: wrap; gap: .7rem 1.2rem; align-items: center; }
+.btn { display: inline-block; text-decoration: none; font-family: var(--cond); font-weight: 700; font-size: 1.25rem; letter-spacing: .03em; text-transform: uppercase; background: var(--yellow); color: var(--night); padding: .55rem 1.1rem .5rem; box-shadow: 4px 4px 0 var(--moss); }
+.btn:hover { background: #fff36b; }
+.link { font-weight: 600; text-decoration: underline; text-decoration-color: var(--yellow); text-decoration-thickness: 2px; text-underline-offset: 5px; }
+@media (min-width: 900px) {
+  .tab, .drop { bottom: auto; top: 0; right: 14px; }
+  .stage { --bw: min(calc((100svh - 150px) * .617), 30vw); }
+  .book { left: 14vw; top: 50%; transform: translateY(-52%); }
+  .words { left: calc(14vw + var(--bw) + 7vw); right: 8vw; top: 50%; transform: translateY(-50%); max-width: 36rem; }
+  .line { font-size: clamp(1.5rem, 2vw, 1.9rem); }
+  .tag { font-size: clamp(2.4rem, 3.6vw, 3.6rem); }
+}
+
+/* ---------- sections ---------- */
+.sec { padding: clamp(3.5rem, 9vw, 7rem) var(--gutter); }
+.in { max-width: 1120px; margin: 0 auto; }
+h2 { font-family: var(--cond); font-weight: 700; font-size: clamp(2.6rem, 11vw, 5rem); line-height: 1; text-transform: uppercase; margin: 0 0 1.3rem; color: #fff; }
+h2 span { color: var(--yellow); }
+h3 { font-family: var(--cond); font-weight: 700; font-size: 1.7rem; text-transform: uppercase; line-height: 1.05; margin: 0 0 .3rem; }
+p { margin: 0 0 1rem; max-width: 38rem; }
+.two { display: grid; gap: 2.4rem; }
+@media (min-width: 860px) { .two { grid-template-columns: 7fr 5fr; gap: 5rem; } }
+@media (max-width: 859px) { .mel .fc { display: none; } }
+.mel { background: linear-gradient(180deg, var(--night), var(--deep)); }
+.facts { list-style: none; padding: 0; margin: 0 0 1.4rem; display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; color: var(--soft); font-size: 1.02rem; }
+.blurb-q { font-family: var(--cond); font-weight: 500; font-size: 1.9rem; line-height: 1.15; color: var(--yellow); margin: 1.6rem 0 .2rem; }
+.blurb-q + p { color: var(--soft); font-size: 1rem; }
+
+.dl { background: var(--mist); color: var(--night); }
+.dl h2 { color: var(--night); }
+.dl h2 span { color: #c02c5a; }
+.trips { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; gap: 0; }
+.trips li { display: grid; grid-template-columns: 96px 1fr; gap: 1.2rem; padding: 1.6rem 0; border-top: 2px solid var(--night); align-items: start; }
+.trips li:last-child { border-bottom: 2px solid var(--night); }
+.trips img { width: 96px; box-shadow: 4px 4px 0 rgba(4, 25, 44, .25); }
+.trips .where { font-family: var(--cond); font-weight: 700; font-size: 1rem; letter-spacing: .06em; text-transform: uppercase; color: #c02c5a; margin: 0 0 .2rem; }
+.trips h3 { color: var(--night); }
+.trips p { font-size: 1.05rem; margin-bottom: .4rem; }
+.trips .yr { color: #3e5566; font-size: .95rem; }
+@media (min-width: 860px) { .trips { grid-template-columns: repeat(3, 1fr); gap: 0 2.4rem; } .trips li { grid-template-columns: 1fr; border-bottom: 2px solid var(--night); } .trips img { width: 150px; } }
+.praise { display: grid; gap: 1.4rem; margin-top: 2.6rem; }
+@media (min-width: 860px) { .praise { grid-template-columns: repeat(3, 1fr); gap: 2.4rem; } }
+.praise blockquote { margin: 0; font-size: 1.15rem; font-style: italic; }
+.praise cite { display: block; font-style: normal; font-weight: 600; font-size: .95rem; margin-top: .4rem; }
+
+.lazy { background: #1b2a1d; }
+.lazy .two { align-items: center; }
+.lazy img { width: min(260px, 70vw); box-shadow: 0 16px 30px rgba(0, 0, 0, .45); }
+.lazy h2 span { color: #f0d23a; }
+
+.s64 { background: var(--yellow); color: var(--night); }
+.s64 h2 { color: var(--night); }
+.s64 .t { font-family: var(--cond); font-weight: 700; font-size: clamp(6rem, 30vw, 12rem); line-height: .85; margin: 0 0 .8rem; }
+.s64 .when { font-family: var(--cond); font-weight: 500; font-size: 1.5rem; text-transform: uppercase; margin: 0 0 .3rem; }
+
+.steve .two { align-items: start; }
+@media (min-width: 860px) { .steve .two { grid-template-columns: 4fr 8fr; } }
+.steve img { width: 180px; border: 4px solid var(--yellow); }
+
+.next { background: linear-gradient(180deg, var(--deep), var(--night)); text-align: center; }
+.next h2 { font-size: clamp(3rem, 14vw, 7rem); }
+.next p { margin-left: auto; margin-right: auto; }
+.next .btns { justify-content: center; }
+footer { background: var(--night); color: var(--soft); text-align: center; padding: 1.4rem var(--gutter) 2.2rem; font-size: 1rem; border-top: 1px solid rgba(219, 234, 243, .15); }
+
+/* no JavaScript or reduced motion: the front cover, no pin */
+html:not(.js) .hero, html.still .hero { height: auto; }
+html:not(.js) .stage, html.still .stage { position: relative; height: auto; padding: 22px 0 2rem; }
+html:not(.js) .book, html.still .book { position: relative; left: auto; top: auto; transform: none; margin: 0 auto; }
+html:not(.js) .lights, html.still .lights, html:not(.js) .say-a, html.still .say-a { display: none; }
+html:not(.js) .words, html.still .words { position: relative; left: auto; right: auto; top: auto; transform: none; padding: 1.8rem var(--gutter) 0; max-width: 40rem; margin: 0 auto; }
+html:not(.js) .card, html.still .card { transform: none; }
+@media (min-width: 900px) {
+  html:not(.js) .stage, html.still .stage { display: flex; align-items: center; gap: 6vw; padding: 3rem 8vw 3rem 14vw; }
+  html:not(.js) .book, html.still .book { margin: 0; flex: none; }
+  html:not(.js) .words, html.still .words { padding: 0; margin: 0; }
+}
+</style>
+</head>
+<body>
+<div class="strip">A homepage idea made by Sparsh Saini for Steve Sheppard. Not their official site.</div>
+
+<button class="tab" aria-controls="drop" aria-expanded="false">Steve Sheppard</button>
+<div class="drop" id="drop" role="dialog" aria-label="Menu">
+  <button class="x">Close</button>
+  <ol>
+    <li><a href="#mel">False Connections</a></li>
+    <li><a href="#dawson">Dawson and Lucy</a></li>
+    <li><a href="#lazytown">Lazytown</a></li>
+    <li><a href="#s64">Table S64</a></li>
+    <li><a href="#steve">Steve</a></li>
+  </ol>
+</div>
+
+<main>
+<section class="hero" id="top" aria-label="False Connections, turned over from the back cover to the front">
+  <div class="stage">
+    <div class="book">
+      <div class="shadow"></div>
+      <div class="card" role="img" aria-label="The False Connections paperback turned over: on the back, headlights on a wet night road; on the front, Mel Milano in a yellow jacket at the foot of a Welsh waterfall, holding a knife.">
+        <div class="face back"><img class="lights" src="img/lights.webp" alt="" width="230" height="170"></div>
+        <div class="face spine"></div>
+        <div class="face front"></div>
+      </div>
+    </div>
+    <div class="words">
+      <h1>False Connections, by Steve Sheppard</h1>
+      <div class="says">
+        <div class="say-a"><p class="line">Three years ago, Mel Milano was an MI5 intelligence officer with a promising career. Then, during a routine operation in Wales, things went drastically wrong.</p></div>
+        <div class="say-b">
+          <p class="tag">She's ex-MI5. <span>MI5 wants her dead.</span> Who can she trust?</p>
+          <div class="btns"><a class="btn" href="https://www.amazon.co.uk/dp/B0H3NTD5BS">Get False Connections</a><a class="link" href="#s64">Table S64, Oxford</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec mel" id="mel">
+  <div class="in two">
+    <div>
+      <h2>Mel Milano is <span>on the run</span></h2>
+      <p>Drummed out of the service on trumped-up charges by MI5 Deputy Director Sarah Brook, Mel lost her career, her self-respect, her confidence and her fiancé, Liam Webster. Nothing made sense.</p>
+      <p>Three years on, she is rebuilding her life, working for a private security outfit. But it's clear that Mel's not the only one still holding a grudge. Suddenly everybody seems to want her dead. But why?</p>
+      <p>A straight thriller, set in Hampshire, Wales and beyond, with lots of action and twists. Mel is not short of a witty line or an acerbic comment.</p>
+      <ul class="facts"><li>Out June 2026</li><li>279 pages</li><li>Introducing Mel Milano</li></ul>
+      <p class="blurb-q">"Addictively readable."</p>
+      <p>Justine Gilbert, author, Crime Writers' Association</p>
+    </div>
+    <div>
+      <img class="fc" src="img/front.jpg" alt="The front cover of False Connections." width="958" height="1552" style="width:min(320px,80vw);box-shadow:0 18px 36px rgba(0,0,0,.5)">
+    </div>
+  </div>
+</section>
+
+<section class="sec dl" id="dawson">
+  <div class="in">
+    <h2>Dawson and Lucy: <span>spies and laughs</span></h2>
+    <p>The initially rather hapless but always witty and optimistic Dawson, and the considerably less hapless and increasingly kick-ass Lucy. Three standalone spy thrillers with (lots of) laughs, published by the lovely little indie publisher Claret Press. A fourth, set in Naples, is on the cards.</p>
+    <ol class="trips">
+      <li><img src="img/teapot.jpg" alt="The cover of A Very Important Teapot: a pink teapot and cakes held up by silhouetted hands." width="342" height="400" loading="lazy"><div><p class="where">Northern Victoria, Australia</p><h3>A Very Important Teapot</h3><p>The hunt for a lost cache of Nazi diamonds, with half the local underworld, the police and three countries' intelligence agencies trying to catch up with Dawson.</p><p class="yr">2019</p></div></li>
+      <li><img src="img/baltics.jpg" alt="The cover of Bored to Death in the Baltics: blue rings like a target behind silhouetted hands." width="306" height="400" loading="lazy"><div><p class="where">Estonia</p><h3>Bored to Death in the Baltics</h3><p>A bomb, a kidnapping, a traitor inside MI6, and the tantalising Sesks twins. I defy you to find another thriller, comedy or otherwise, written in English and set in Estonia.</p><p class="yr">2021</p></div></li>
+      <li><img src="img/table-manners.jpg" alt="The cover of Poor Table Manners: a yellow ground with South African flags and silhouetted hands." width="267" height="400" loading="lazy"><div><p class="where">Cape Town</p><h3>Poor Table Manners</h3><p>A missing government lawyer, a kidnapped agent, a gunpoint stand-off on Table Mountain, and a helicopter that may scoop up some goats.</p><p class="yr">2024</p></div></li>
+    </ol>
+    <div class="praise">
+      <blockquote>"A curiously magical thriller with suburban subterfuge and sparkle."<cite>Helen Lederer, founder of the Comedy Women in Print Prize</cite></blockquote>
+      <blockquote>"A thriller, a chase, a buddy story and a mystery, all smoothly told with hugely engaging characters."<cite>Adrian Magson, author of Hostile State</cite></blockquote>
+      <blockquote>"What a hilarious, energetic and entertaining roller-coaster of a read this is."<cite>Sue Clark, author of Note to Boy</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="sec lazy" id="lazytown">
+  <div class="in two">
+    <div>
+      <h2>Murder and mayhem in <span>Lazytown</span></h2>
+      <p>Life in the quirky Oxfordshire village of Idleborough, known to all as Lazytown, is relaxed for jobbing writer Sam Bryant, despite living in the unfortunately named Slaughterhouse Cottages. Then one of the four pubs shuts, the landlord and his wife disappear, and a prominent local turns up murdered.</p>
+      <p>A standalone comedy murder mystery, inspired by the village I spent twenty-five years living in, and trying to understand.</p>
+    </div>
+    <img src="img/lazytown.jpg" alt="The cover of Lazytown: a cartoon village pub with red splatters, the title in yellow." width="200" height="320" loading="lazy">
+  </div>
+</section>
+
+<section class="sec s64" id="s64">
+  <div class="in">
+    <p class="when">Oxford Indie Book Fair, Sunday 22 November 2026</p>
+    <p class="t">S64</p>
+    <p>Mel, Dawson, Lucy and Lazytown, all on one table. Come and say hello.</p>
+  </div>
+</section>
+
+<section class="sec steve" id="steve">
+  <div class="in two">
+    <img src="img/steve.jpg" alt="Steve Sheppard, smiling, in glasses." width="219" height="232" loading="lazy">
+    <div>
+      <h2>Hello, I'm <span>Steve</span></h2>
+      <p>I was born in Guildford and lived in various parts of Surrey, then Buckinghamshire and Oxfordshire, discovering along the way that these are all quite expensive places to live. I now live in Hampshire.</p>
+      <p>I spent forty years starting to write books but not finishing them, until I belatedly realised that the key is not to give up. Much to my astonishment, I have now written five novels.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec next" id="next">
+  <div class="in">
+    <h2>Next stop: <span>Naples</span></h2>
+    <p>A fourth Dawson and Lucy adventure is on the cards, and I very much hope False Connections is not the last we'll see of Mel. Watch this space.</p>
+    <div class="btns"><a class="btn" href="https://www.instagram.com/stevesheps22/">Follow on Instagram</a><a class="link" href="https://www.stevesheppardauthor.com/contact.html">Get in touch</a></div>
+  </div>
+</section>
+</main>
+
+<footer>A mockup made by Sparsh Saini for Steve Sheppard. Not affiliated, not live.</footer>
+
+<script>
+(() => {
+  const tab = document.querySelector('.tab'), drop = document.getElementById('drop');
+  const setOpen = o => { drop.classList.toggle('open', o); tab.setAttribute('aria-expanded', o); if (o) drop.querySelector('a').focus(); };
+  tab.addEventListener('click', () => setOpen(true));
+  drop.addEventListener('click', e => { if (e.target.closest('.x') || e.target.closest('a')) setOpen(false); });
+  addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
+
+  // the back cover's headlights, in face pixels (958 x 1552), cut by build/make-planes.py
+  const FW = 958, FH = 1552, LB = [0, 960, 230, 170];
+  const lights = document.querySelector('.lights');
+  Object.assign(lights.style, { left: LB[0] / FW * 100 + '%', top: LB[1] / FH * 100 + '%', width: LB[2] / FW * 100 + '%', height: LB[3] / FH * 100 + '%', transformOrigin: '45% 62%' });
+  const still = matchMedia('(prefers-reduced-motion: reduce)');
+  const hero = document.querySelector('.hero'), card = document.querySelector('.card');
+  const sayA = document.querySelector('.say-a'), sayB = document.querySelector('.say-b');
+  const clamp = v => v < 0 ? 0 : v > 1 ? 1 : v;
+  const ease = t => t * t * (3 - 2 * t);
+  const inOut = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  let top = 0, run = 1, ticking = false, lastP = -1;
+  function measure() { top = hero.getBoundingClientRect().top + scrollY; run = Math.max(1, hero.offsetHeight - innerHeight); }
+  function draw(p) {
+    // 1. the back cover: the car's headlights come up the wet road toward you
+    const near = ease(clamp((p - .04) / .32));
+    const flick = near > .05 && near < .99 ? .06 * Math.sin(p * 220) : 0;
+    lights.style.transform = `scale(${(1 + near * 1.5).toFixed(3)})`;
+    lights.style.opacity = (.55 + near * .45 + flick).toFixed(3);
+    // 2. the book is turned over through its spine, 3. it settles on the front: Mel at the waterfall
+    const f = inOut(clamp((p - .36) / .34));
+    const lift = Math.sin(Math.PI * f);
+    card.style.transform = `translateZ(${(-lift * 60).toFixed(1)}px) rotateY(${(180 - f * 180).toFixed(2)}deg) rotateX(${(lift * 4).toFixed(2)}deg)`;
+    const a = 1 - ease(clamp((p - .4) / .1)), b = ease(clamp((p - .6) / .1));
+    sayA.style.opacity = a.toFixed(3); sayA.style.transform = `translate3d(0,${(-(1 - a) * 12).toFixed(1)}px,0)`; sayA.style.visibility = a < .01 ? 'hidden' : 'visible';
+    sayB.style.opacity = b.toFixed(3); sayB.style.transform = `translate3d(0,${((1 - b) * 16).toFixed(1)}px,0)`; sayB.style.visibility = b < .01 ? 'hidden' : 'visible';
+  }
+  function frame() { ticking = false; tab.classList.toggle('on', scrollY > 60); const p = still.matches ? 1 : clamp((scrollY - top) / run); if (Math.abs(p - lastP) < .0004) return; lastP = p; draw(p); }
+  function setMode() { document.documentElement.classList.toggle('still', still.matches); measure(); lastP = -1; frame(); }
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }, { passive: true });
+  addEventListener('resize', () => { measure(); lastP = -1; frame(); });
+  still.addEventListener('change', setMode);
+  setMode();
+})();
+</script>
+</body>
+</html>
